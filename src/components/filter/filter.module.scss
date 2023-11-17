@@ -1,0 +1,43 @@
+@import '../../index';
+
+.wrapper{
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+.search{
+  color: var(--l-m-text);
+  background: var(--l-m-element);
+  width: 450px;
+  height: 50px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  font-size: 14px;
+  box-shadow: var(--l-m-shadow) 0 0 2px 1px;
+}
+
+.filter{
+  background: var(--l-m-element);
+  height: 50px;
+  width: 180px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: var(--l-m-shadow) 0 0 2px 1px;
+
+}
+
+.filter > select{
+  background: var(--l-m-element);
+  color: var(--l-m-text);
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

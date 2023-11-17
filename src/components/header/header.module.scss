@@ -1,0 +1,27 @@
+@import '../../index';
+
+
+.header{
+  background: var(--l-m-element);
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  box-shadow: var(--l-m-shadow) 0 0 2px 1px;
+}
+
+.header > span{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.rightSide{
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 30px;
+  width: 130px;
+}

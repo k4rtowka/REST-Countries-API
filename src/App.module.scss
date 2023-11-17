@@ -1,0 +1,19 @@
+@import "index";
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  padding-bottom: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--l-m-background);
+  color: var(--l-m-text);
+}
+
+.dark{
+  --l-m-background: var(--d-m-background);
+  --l-m-text: var(--d-m-text);
+  --l-m-element: var(--d-m-element);
+  --l-m-shadow: var(--d-m-shadow);
+}

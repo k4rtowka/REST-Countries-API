@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+:root {
+    --l-m-background: #FAFAFA;
+    --l-m-text: black;
+    --l-m-element: #FFFFFF;
+    --l-m-shadow: #e9e9f1;
+    --d-m-background: #202D36;
+    --d-m-text: white;
+    --d-m-element: #2B3743;
+    --d-m-shadow: #283440;
+}

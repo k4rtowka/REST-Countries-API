@@ -1,0 +1,50 @@
+.button__back{
+  background: var(--l-m-element);
+  box-shadow: var(--l-m-shadow) 0 0 2px 1px;
+  color: var(--l-m-text);
+  border: none;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  img{
+    height: 80%;
+    object-fit: cover;
+  }
+}
+
+.topper{
+  padding: 50px 80px;
+  width: 100vw;
+  height: 100px;
+}
+
+.content{
+  width: 100vw;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: auto 560px;
+  padding: 50px 80px;
+  img{
+    height: 400px;
+    width: 560px;
+    object-fit: cover;
+  }
+
+  .rightSide{
+    display: grid;
+    padding: 50px 0;
+    grid-template-rows: 50px 150px;
+    grid-template-columns: auto auto;
+    div{
+      .item{
+        margin: 13px 0;
+      }
+    }
+  }
+}
+
