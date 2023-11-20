@@ -1,12 +1,28 @@
 import {Link, useParams} from "react-router-dom";
 import arrow from '../assets/icon-left.png'
 import classes from "./countryPage.module.scss";
-import {useAppSelector} from "../hooks/redux.ts";
+import {useAppDispatch, useAppSelector} from "../hooks/redux.ts";
+import React from "react";
+import {fetchCountry} from "../store/action-creators/CountryAction.ts";
+import {resetCountry} from "../store/reducers/CountrySlice.ts";
+
 
 const CountryPage = () => {
-    const params = useParams<{ cca3: string }>();
-    const countries = useAppSelector(state => state.countries.countries);
-    const country = countries.find(value => params.cca3 === value.cca3);
+    const dispatch = useAppDispatch();
+
+    const country = useAppSelector(state => state.countries.country)
+
+    const {cca3} = useParams<{ cca3: string }>();
+
+React.useEffect(() => {
+    if(cca3) dispatch(fetchCountry(cca3))
+
+    return () => {
+        dispatch(resetCountry())
+    }
+}, [cca3]);
+
+if(!country) return null;
 
     return (
         <div>

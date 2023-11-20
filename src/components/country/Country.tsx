@@ -1,9 +1,11 @@
 import classes from "./country.module.scss";
 import {countryType} from "../../store/models/ICountry.ts";
-import React from "react";
 import {useNavigate} from "react-router-dom";
 
-const Country: React.FC<countryType> = (country) => {
+interface CountryProps {
+    country: countryType;
+}
+const Country = ({country}: CountryProps) => {
     const router = useNavigate();
 
     return (

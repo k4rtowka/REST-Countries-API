@@ -1,9 +1,11 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {countryType} from "../models/ICountry.ts";
+import {fetchCountry} from "../action-creators/CountryAction.ts";
 
 
 interface CountryState{
     countries:countryType[];
+    country: countryType | null,
     sortedCountries: countryType[],
     searchAndSortedCountries: countryType[],
     isLoading: boolean,
@@ -12,6 +14,7 @@ interface CountryState{
 
 const initState:CountryState = {
     countries: [],
+    country: null,
     sortedCountries: [],
     searchAndSortedCountries: [],
     isLoading: false,
@@ -22,18 +25,21 @@ export const countrySlice = createSlice({
     name: 'country',
     initialState: initState,
     reducers:{
-        fetch_country(state){
+        fetchCountries(state){
             state.isLoading = true;
         },
-        fetch_country_success(state,action:PayloadAction<countryType[]>){
+        fetchCountriesSuccess(state,action:PayloadAction<countryType[]>){
             state.isLoading = false;
             state.countries = action.payload;
             state.error = '';
         },
-        fetch_country_error: (state, action:PayloadAction<string>)=>{
+        fetchCountriesError: (state, action:PayloadAction<string>)=>{
             state.isLoading = false;
             state.countries = [];
             state.error = action.payload
+        },
+        resetCountry: (state)=>{
+           state.country = null;
         },
         filter: (state,action:PayloadAction<string>) => {
             if(action.payload === 'All'){
@@ -56,8 +62,22 @@ export const countrySlice = createSlice({
                     }
                 })
             }
-        }
-    }
+        },
+
+    },
+    extraReducers: (builder) => {
+        builder.addCase(fetchCountry.pending, (state) => {
+            state.isLoading = true;
+        }).addCase(fetchCountry.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.country = action.payload
+        }).addCase(fetchCountry.rejected, (state, action) => {
+           state.isLoading = false;
+           state.error = action.payload as string;
+        })
+    },
 })
+
+export const {resetCountry} = countrySlice.actions
 
 export default countrySlice.reducer;
