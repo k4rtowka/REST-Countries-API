@@ -8,18 +8,17 @@ import light from '../../assets/icon-light.svg';
 const Header = () => {
     const dispatch = useAppDispatch();
     const theme = useAppSelector(state => state.theme.theme)
-    const mode = theme.charAt(0).toUpperCase() + theme.slice(1)
+    const mode = `${theme.charAt(0).toUpperCase() + theme.slice(1)} mode`
+
+    const handleClick = () => dispatch(switchTheme())
 
 
     return (
         <div className={classes.header}>
             <h2 className={classes.title}>Where in the world?</h2>
-            <div className={classes.rightSide} onClick={() => dispatch(switchTheme())}>
-                <img src={theme==='dark'?light:dark} alt={theme}
-                     style={{width: "18px", height: "18px"}}
-                >
-                </img>
-              <span >{mode} mode</span>
+            <div className={classes.rightSide} onClick={handleClick}>
+                <img src={theme==='dark'?light:dark} alt={theme}/>
+              <span>{mode}</span>
             </div>
         </div>
     );

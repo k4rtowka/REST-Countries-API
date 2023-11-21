@@ -1,4 +1,5 @@
 import classes from "./App.module.scss";
+import cn from 'classnames';
 import Header from "./components/header/Header.tsx";
 import {useAppSelector} from "./hooks/redux.ts";
 
@@ -7,12 +8,14 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import CountryPage from "./pages/CountryPage.tsx";
 
 
-
 function App() {
-    const theme = useAppSelector(state => state.theme.theme)
+  const theme = useAppSelector(state => state.theme.theme);
+
+  const isDarkTheme = theme === 'dark';
+
   return (
       <BrowserRouter>
-        <div className={theme==='light'?[classes.App, classes.light].join(' '):[classes.App, classes.dark].join(' ')}>
+        <div className={cn(classes.app, {[classes.dark]: isDarkTheme})}>
             <Header/>
             <Routes>
                 <Route path={'/home'} element={<HomePage/>}/>
