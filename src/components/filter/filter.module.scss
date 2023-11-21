@@ -7,6 +7,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 80px;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  @media (max-width: 790px) {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 560px) {
+    padding: 0 60px;
+  }
 }
 
 .search{

@@ -18,21 +18,38 @@
 }
 
 .topper{
-  padding: 50px 80px;
+  display: flex;
+  padding: 0 80px;
+  align-items: center;
   width: 100vw;
   height: 100px;
+  @media (max-width: 560px) {
+    height: 80px;
+    padding: 0 50px;
+  }
 }
 
 .content{
   width: 100vw;
   min-height: 300px;
-  display: grid;
-  grid-template-columns: auto 560px;
-  padding: 50px 80px;
+  display: flex;
+  column-gap: 50px;
+  flex-wrap: wrap;
+
+
+  @media (max-width: 2000px) {
+    padding: 0 80px;
+  }
+
+  @media (max-width: 560px) {
+    padding: 0 50px;
+  }
+
+
   img{
-    height: 400px;
-    width: 560px;
     object-fit: cover;
+    width: 100%;
+    max-width: 560px;
   }
 
   .rightSide{

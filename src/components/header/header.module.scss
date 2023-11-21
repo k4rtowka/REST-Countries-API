@@ -5,23 +5,53 @@
   background: var(--l-m-element);
   display: flex;
   align-items: center;
-  padding: 0 80px;
   justify-content: space-between;
   height: 80px;
   width: 100vw;
   box-shadow: var(--l-m-shadow) 0 0 2px 1px;
+
+  @media (max-width: 560px) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: 560px) {
+    padding: 0 80px;
+  }
 }
 
 .header > span{
-  font-size: 18px;
   cursor: pointer;
+  @media (max-width: 560px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 560px) {
+    font-size: 18px;
+  }
+}
+
+.title{
+  font-Weight: bold;
+  font-size: 26px;
+  @media (max-width: 560px) {
+    font-size: 20px;
+  }
 }
 
 .rightSide{
-  padding: 0 10px;
-  justify-content: space-between;
+  padding: 0 8px;
   align-items: center;
+  justify-content: flex-end;
   display: flex;
   height: 30px;
-  width: 130px;
+  width: 140px;
+  img{
+    margin-right: 8px;
+  }
+  span{
+    @media (max-width: 560px) {
+      display: none;
+    }
+  }
+
 }

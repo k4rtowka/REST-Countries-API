@@ -1,14 +1,26 @@
 .flag{
   img {
-    height: 140px;
-    width: 100%;
+
     object-fit: cover;
+
+    @media (max-width: 560px) {
+      height: 180px;
+      width: 100%;
+    }
+
+    @media (min-width: 560px) {
+      height: 140px;
+      width: 100%;
+    }
   }
 }
 
 .bottom{
   height: 160px;
   padding: 20px 25px;
+  @media (max-width: 560px) {
+    padding: 5px 15px;
+  }
 }
 
 .bottom h3{
@@ -23,8 +35,17 @@
 .country{
   background: var(--l-m-element);
   box-shadow: var(--l-m-shadow) 0 0 2px 1px;
-  width: 240px;
-  height: 300px;
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
+
+  @media (max-width: 560px) {
+    width: 100%;
+    height: 340px;
+  }
+
+  @media (min-width: 560px) {
+    width: 240px;
+    height: 300px;
+  }
 }
